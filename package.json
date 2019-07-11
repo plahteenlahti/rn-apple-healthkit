@@ -1,5 +1,5 @@
 {
-	"name": "RCTAppleHealthKit",
+	"name": "react-native-healthkit",
 	"version": "0.6.6",
 	"description": "A React Native package for interacting with Apple HealthKit",
 	"main": "index.js",
