@@ -1,3 +1,6 @@
+export const AppleHealthKit: AppleHealthKit;
+export default AppleHealthKit;
+
 export interface AppleHealthKit {
 	Constants: {
 		Permissions: {
