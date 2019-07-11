@@ -1,7 +1,5 @@
-export const AppleHealthKit: AppleHealthKit;
-export default AppleHealthKit;
-
-export interface AppleHealthKit {
+declare const AppleHealthKit: {
+	initHealthKit: () => void;
 	Constants: {
 		Permissions: {
 			ActiveEnergyBurned: 'ActiveEnergyBurned';
@@ -93,4 +91,6 @@ export interface AppleHealthKit {
 			second: 'second';
 		};
 	};
-}
+};
+
+export default _default;
