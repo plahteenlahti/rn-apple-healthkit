@@ -27,7 +27,7 @@
 
 @synthesize bridge = _bridge;
 
-RCT_EXPORT_MODULE();
+RCT_EXPORT_MODULE(AppleHealthKit);
 
 RCT_EXPORT_METHOD(isAvailable:(RCTResponseSenderBlock)callback)
 {
