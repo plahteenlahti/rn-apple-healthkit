@@ -12,6 +12,9 @@ declare module 'react-native-healthkit' {
 			callback: (error: string, result: Object) => void
 		): void;
 		isAvailable(callback: (error: Object, results: boolean) => void): void;
+		Constants: {
+			Permissions: {};
+		};
 	}
 
 	const appleHealthKit: AppleHealthKit;
