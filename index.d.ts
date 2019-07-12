@@ -1,96 +1,19 @@
-declare const AppleHealthKit: {
-	initHealthKit: () => void;
-	Constants: {
-		Permissions: {
-			ActiveEnergyBurned: 'ActiveEnergyBurned';
-			AppleExerciseTime: 'AppleExerciseTime';
-			BasalEnergyBurned: 'BasalEnergyBurned';
-			BiologicalSex: 'BiologicalSex';
-			BloodGlucose: 'BloodGlucose';
-			BloodPressureDiastolic: 'BloodPressureDiastolic';
-			BloodPressureSystolic: 'BloodPressureSystolic';
-			BodyFatPercentage: 'BodyFatPercentage';
-			BodyMass: 'BodyMass';
-			BodyMassIndex: 'BodyMassIndex';
-			BodyTemperature: 'BodyTemperature';
-			DateOfBirth: 'DateOfBirth';
-			Biotin: 'Biotin';
-			Caffeine: 'Caffeine';
-			Calcium: 'Calcium';
-			Carbohydrates: 'Carbohydrates';
-			Chloride: 'Chloride';
-			Cholesterol: 'Cholesterol';
-			Copper: 'Copper';
-			EnergyConsumed: 'EnergyConsumed';
-			FatMonounsaturated: 'FatMonounsaturated';
-			FatPolyunsaturated: 'FatPolyunsaturated';
-			FatSaturated: 'FatSaturated';
-			FatTotal: 'FatTotal';
-			Fiber: 'Fiber';
-			Folate: 'Folate';
-			Iodine: 'Iodine';
-			Iron: 'Iron';
-			Magnesium: 'Magnesium';
-			Manganese: 'Manganese';
-			Molybdenum: 'Molybdenum';
-			Niacin: 'Niacin';
-			PantothenicAcid: 'PantothenicAcid';
-			Phosphorus: 'Phosphorus';
-			Potassium: 'Potassium';
-			Protein: 'Protein';
-			Riboflavin: 'Riboflavin';
-			Selenium: 'Selenium';
-			Sodium: 'Sodium';
-			Sugar: 'Sugar';
-			Thiamin: 'Thiamin';
-			VitaminA: 'VitaminA';
-			VitaminB12: 'VitaminB12';
-			VitaminB6: 'VitaminB6';
-			VitaminC: 'VitaminC';
-			VitaminD: 'VitaminD';
-			VitaminE: 'VitaminE';
-			VitaminK: 'VitaminK';
-			Zinc: 'Zinc';
-			Water: 'Water';
-			DistanceCycling: 'DistanceCycling';
-			DistanceSwimming: 'DistanceSwimming';
-			DistanceWalkingRunning: 'DistanceWalkingRunning';
-			FlightsClimbed: 'FlightsClimbed';
-			HeartRate: 'HeartRate';
-			Height: 'Height';
-			LeanBodyMass: 'LeanBodyMass';
-			MindfulSession: 'MindfulSession';
-			NikeFuel: 'NikeFuel';
-			RespiratoryRate: 'RespiratoryRate';
-			SleepAnalysis: 'SleepAnalysis';
-			StepCount: 'StepCount';
-			Steps: 'Steps';
-			Weight: 'Weight';
-			Workout: 'Workout';
+declare module 'react-native-healthkit' {
+	export interface HealthKitPermissions {
+		permissions: {
+			read: string[];
+			write: string[];
 		};
-		Units: {
-			bpm: 'bpm';
-			calorie: 'calorie';
-			celsius: 'celsius';
-			count: 'count';
-			day: 'day';
-			fahrenheit: 'fahrenheit';
-			foot: 'foot';
-			gram: 'gram';
-			hour: 'hour';
-			inch: 'inch';
-			joule: 'joule';
-			meter: 'meter';
-			mgPerdL: 'mgPerdL';
-			mile: 'mile';
-			minute: 'minute';
-			mmhg: 'mmhg';
-			mmolPerL: 'mmolPerL';
-			percent: 'percent';
-			pound: 'pound';
-			second: 'second';
-		};
-	};
-};
+	}
 
-export default _default;
+	export interface AppleHealthKit {
+		initHealthKit(
+			permissions: HealthKitPermissions,
+			callback: (error: string, result: Object) => void
+		): void;
+		isAvailable(callback: (error: Object, results: boolean) => void): void;
+	}
+
+	const appleHealthKit: AppleHealthKit;
+	export default appleHealthKit;
+}
