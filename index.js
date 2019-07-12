@@ -1,9 +1,9 @@
-let { AppleHealthKit } = require('react-native').NativeModules;
+let { RCTAppleHealthKit } = require('react-native').NativeModules;
 
 import { Permissions } from './Constants/Permissions';
 import { Units } from './Constants/Units';
 
-let HealthKit = Object.assign({}, AppleHealthKit, {
+let HealthKit = Object.assign({}, RCTAppleHealthKit, {
 	Constants: {
 		Permissions: Permissions,
 		Units: Units
