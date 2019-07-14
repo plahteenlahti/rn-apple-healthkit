@@ -15,6 +15,8 @@ declare module 'react-native-healthkit' {
 		Constants: {
 			Permissions: {};
 		};
+
+		
 	}
 
 	export interface Permission {
