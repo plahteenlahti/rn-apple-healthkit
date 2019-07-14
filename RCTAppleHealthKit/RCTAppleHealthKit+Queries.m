@@ -320,7 +320,32 @@
             });
         }
     };
-                                   }
+                                   
+    // HKSampleQuery *query = [[HKSampleQuery alloc] initWithSampleType:quantityType
+    //                                                        predicate:predicate
+    //                                                            limit:lim
+    //                                                  sortDescriptors:@[timeSortDescriptor]
+    //                                                   resultsHandler:handlerBlock];
+
+    HKCategoryType *categoryType =
+    [HKObjectType categoryTypeForIdentifier:HKCategoryTypeIdentifierSleepAnalysis];
+
+    // HKCategorySample *categorySample =
+    // [HKCategorySample categorySampleWithType:categoryType
+    //                                    value:value
+    //                                startDate:startDate
+    //                                  endDate:endDate];
+
+
+   HKSampleQuery *query = [[HKSampleQuery alloc] initWithSampleType:categoryType
+                                                          predicate:predicate
+                                                              limit:lim
+                                                    sortDescriptors:@[timeSortDescriptor]
+                                                     resultsHandler:handlerBlock];
+
+
+    [self.healthStore executeQuery:query];
+}
 
 
 
