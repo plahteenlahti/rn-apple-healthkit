@@ -12,11 +12,14 @@ declare module 'react-native-healthkit' {
 			callback: (error: string, result: Object) => void
 		): void;
 		isAvailable(callback: (error: Object, results: boolean) => void): void;
-		Constants: {
-			Permissions: {};
-		};
+		getSleepSamples(
+			options: Object,
+			callback: (err: string, results: Array) => void
+		): void;
 
-		
+		Constants: {
+			Permissions: { PermissionUnit };
+		};
 	}
 
 	export interface Permission {
