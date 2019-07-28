@@ -282,7 +282,8 @@
                     // HKCategoryType *catType = sample.categoryType;
                     NSInteger val = sample.value;
                     NSString * source = sample.sourceRevision.source.name;
-   
+                    // @"sourceName" : [[[sample sourceRevision] source] name],
+                    // @"sourceId" : [[[sample sourceRevision] source] bundleIdentifier],
                     // HKQuantity *quantity = sample.quantity;
                     // double value = [quantity doubleValueForUnit:unit];
                     
@@ -310,7 +311,9 @@
                                            @"value" : valueString,
                                            @"startDate" : startDateString,
                                            @"endDate" : endDateString,
-                                           @"source" : source
+                                           @"source" : source,
+                                           @"sourceName" : [[[sample sourceRevision] source] name],
+                                           @"sourceId" : [[[sample sourceRevision] source] bundleIdentifier],
                                            };
                     
                     [data addObject:elem];
