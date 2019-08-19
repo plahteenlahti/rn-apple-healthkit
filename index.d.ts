@@ -14,9 +14,12 @@ declare module 'react-native-healthkit' {
 		isAvailable(callback: (error: Object, results: boolean) => void): void;
 		getSleepSamples(
 			options: Object,
-			callback: (err: string, results: Array) => void
+			callback: (err: string, results: Array<SleepSample>) => void
 		): void;
-
+		saveSleep(
+			options: Object,
+			callback: (err: string, results: Array<SleepSample>) => void
+		): void;
 		Constants: {
 			Permissions: { PermissionUnit };
 		};
@@ -93,6 +96,13 @@ declare module 'react-native-healthkit' {
 		Weight = 'Weight',
 		Workout = 'Workout'
 	}
+
+	export type SleepSample = {
+		startDate: string;
+		endDate: string;
+		sourceId: string;
+		sourceName: string;
+	};
 
 	export interface HealthUnitOptions {
 		unit: HealthUnit;
