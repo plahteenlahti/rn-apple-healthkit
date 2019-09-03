@@ -20,6 +20,10 @@ declare module 'react-native-healthkit' {
 			options: Object,
 			callback: (err: string, results: Array<SleepSample>) => void
 		): void;
+		getActiveEnergyBurned(
+			options: Object,
+			callback: (err: string, results: Array<any>) => void
+		): void;
 		Constants: {
 			Permissions: { PermissionUnit };
 		};
