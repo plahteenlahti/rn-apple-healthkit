@@ -282,6 +282,8 @@
                     // HKCategoryType *catType = sample.categoryType;
                     NSInteger val = sample.value;
                     NSString * source = sample.sourceRevision.source.name;
+                    NSUUID * id = [sample UUID];
+                    NSString *sampleId = [id UUIDString];
                     // @"sourceName" : [[[sample sourceRevision] source] name],
                     // @"sourceId" : [[[sample sourceRevision] source] bundleIdentifier],
                     // HKQuantity *quantity = sample.quantity;
@@ -314,6 +316,7 @@
                                            @"source" : source,
                                            @"sourceName" : [[[sample sourceRevision] source] name],
                                            @"sourceId" : [[[sample sourceRevision] source] bundleIdentifier],
+                                           @"id":sampleId
                                            };
                     
                     [data addObject:elem];
