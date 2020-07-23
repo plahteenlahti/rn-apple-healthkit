@@ -282,6 +282,8 @@
                     // HKCategoryType *catType = sample.categoryType;
                     NSInteger val = sample.value;
                     NSString * source = sample.sourceRevision.source.name;
+                    NSString *uuid = [[NSUUID sample.uuid] UUIDString];
+
                     // @"sourceName" : [[[sample sourceRevision] source] name],
                     // @"sourceId" : [[[sample sourceRevision] source] bundleIdentifier],
                     // HKQuantity *quantity = sample.quantity;
@@ -289,7 +291,6 @@
                     
                     NSString *startDateString = [RCTAppleHealthKit buildISO8601StringFromDate:sample.startDate];
                     NSString *endDateString = [RCTAppleHealthKit buildISO8601StringFromDate:sample.endDate];
-                    
                     NSString *valueString;
                     
                     switch (val) {
@@ -314,6 +315,7 @@
                                            @"source" : source,
                                            @"sourceName" : [[[sample sourceRevision] source] name],
                                            @"sourceId" : [[[sample sourceRevision] source] bundleIdentifier],
+                                           @"id" : uuid
                                            };
                     
                     [data addObject:elem];
