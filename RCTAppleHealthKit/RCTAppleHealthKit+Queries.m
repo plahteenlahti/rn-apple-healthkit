@@ -278,19 +278,13 @@
             dispatch_async(dispatch_get_main_queue(), ^{
 
                 for (HKCategorySample *sample in results) {
-                    
-                    // HKCategoryType *catType = sample.categoryType;
+                
                     NSInteger val = sample.value;
                     NSString * source = sample.sourceRevision.source.name;
-                    NSString *uuid = [[NSUUID sample.uuid] UUIDString];
-
-                    // @"sourceName" : [[[sample sourceRevision] source] name],
-                    // @"sourceId" : [[[sample sourceRevision] source] bundleIdentifier],
-                    // HKQuantity *quantity = sample.quantity;
-                    // double value = [quantity doubleValueForUnit:unit];
-                    
+                    NSString *uuid = [[sample UUID] UUIDString];
                     NSString *startDateString = [RCTAppleHealthKit buildISO8601StringFromDate:sample.startDate];
                     NSString *endDateString = [RCTAppleHealthKit buildISO8601StringFromDate:sample.endDate];
+                    
                     NSString *valueString;
                     
                     switch (val) {
@@ -315,7 +309,7 @@
                                            @"source" : source,
                                            @"sourceName" : [[[sample sourceRevision] source] name],
                                            @"sourceId" : [[[sample sourceRevision] source] bundleIdentifier],
-                                           @"id" : uuid
+                                           @"uuid" : [[[sample sourceRevision] source] bundleIdentifier],
                                            };
                     
                     [data addObject:elem];
