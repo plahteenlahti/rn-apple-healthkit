@@ -309,7 +309,7 @@
                                            @"source" : source,
                                            @"sourceName" : [[[sample sourceRevision] source] name],
                                            @"sourceId" : [[[sample sourceRevision] source] bundleIdentifier],
-                                           @"uuid" : [[[sample sourceRevision] source] bundleIdentifier],
+                                           @"uuid" : uuid,
                                            };
                     
                     [data addObject:elem];
